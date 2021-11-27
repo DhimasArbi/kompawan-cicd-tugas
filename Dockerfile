@@ -6,7 +6,7 @@ WORKDIR /usr/share/nginx/html
 # Cleanup unneeded files, relative to working directory
 RUN mkdir -p /usr/share/nginx/html/crud-web
 
-COPY build/ /usr/share/nginx/html/crud-web
+COPY . /usr/share/nginx/html/crud-web
 
 EXPOSE 80
 
