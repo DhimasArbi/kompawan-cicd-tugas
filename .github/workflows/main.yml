@@ -53,7 +53,7 @@ jobs:
             oci compute instance list \
             --lifecycle-state RUNNING \
             --compartment-id ${{secrets.VM_COMPARTMENT_OCID}} \
-            --display-name cicd-demo \
+            --display-name cicd-tugas \
             --query "data [0].id" \
             --raw-output \
             )" >> $GITHUB_ENV
