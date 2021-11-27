@@ -4,9 +4,9 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
 # Cleanup unneeded files, relative to working directory
-RUN mkdir -p /usr/share/nginx/html/crud-web
+RUN rm -rf ./*
 
-COPY . /usr/share/nginx/html/crud-web
+COPY . /usr/share/nginx/html/
 
 EXPOSE 80
 
