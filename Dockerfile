@@ -1,9 +1,13 @@
-FROM ubuntu:18.04
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update
-RUN apt-get install apache2 -y
-RUN apt-get install php -y
-RUN apt-get install php-mysql -y
-ADD . /var/www/html
+FROM nginx:alpine
+
+# Set working directory for document root
+WORKDIR /usr/share/nginx/html
+
+# Cleanup unneeded files, relative to working directory
+RUN mkdir -p /usr/share/nginx/html/crud-web
+
+COPY build/ /usr/share/nginx/html/crud-web
+
 EXPOSE 80
-CMD [“apache2ctl”, “-D”, “FOREGROUND”]
+
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

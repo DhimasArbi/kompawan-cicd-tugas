@@ -4,10 +4,10 @@ class Student
     private $conn;
     function __construct() {
     session_start();
-    $servername = "localhost";
+    $servername = "10.0.0.16";
     $dbname = "crud";
-    $username = "root";
-    $password = "";
+    $username = "admin";
+    $password = "Avatar4ld$";
   
 
     // Create connection
